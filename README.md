@@ -85,4 +85,56 @@ Authorization: Bearer {admin-token}
 ```
 
 
+# Компания
+## CompanyController
+### /api/company GET, общий доступ, Получить информацию о компании + контакты
+### /api/company PUT, доступ - Admin, Creator, Обновить информацию о компании
 
+
+## ContactsController
+### /api/company/contacts GET, общий доступ, получить все контакты
+### /api/company/contacts/{id} GET, общий доступ, получить контакт по id
+### /api/company/contacts POST, ДОСТУП - Admin, Creator, Создать контакт
+### /api/company/contacts/{id} PUT, доступ - Admin, Creator, обновить контакт
+### /api/company/contacts/{id} DELETE, доступ - Admin, Creator, удалить контакт 
+
+#### Пример запроса обновить компанию
+```json
+PUT /api/company
+Authorization: Bearer {admin-token}
+{
+  "name": "Авто",
+  "description": "Крупнейший магазин автозапчастей",
+  "address": "г. Москва, ул. Автомобилистов, д. 15"
+}
+```
+#### Пример запроса создать контакт 
+```json
+POST /api/company/contacts
+Authorization: Bearer {admin-token}
+{
+  "name": "+7 (495) 123-45-67",
+  "description": "Отдел продаж"
+}
+```
+#### Пример запроса получить компанию
+``` json
+GET /api/company
+{
+  "name": "Автоиномир",
+  "description": "Крупнейший магазин автозапчастей",
+  "address": "г. Москва, ул. Автомобилистов, д. 15",
+  "contacts": [
+    {
+      "id": "22222222-2222-2222-2222-222222222222",
+      "name": "+7 (495) 123-45-67",
+      "description": "Отдел продаж"
+    },
+    {
+      "id": "33333333-3333-3333-3333-333333333333",
+      "name": "https://t.me/avtonomir",
+      "description": "Telegram канал"
+    }
+  ]
+}
+```
