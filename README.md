@@ -181,3 +181,23 @@ Authorization: Bearer {token}
 }
 ```
 
+# Сертификаты
+
+## CertificateController
+
+| Метод | Эндпоинт | Доступ | Описание |
+|-------|----------|--------|----------|
+| GET | `/api/certificates` | Все | Получить все сертификаты |
+| GET | `/api/certificates/{id}` | Все | Получить сертификат по ID |
+| POST | `/api/certificates` | `Admin`, `Creator` | Создать сертификат |
+| PUT | `/api/certificates/{id}` | `Admin`, `Creator` | Обновить сертификат |
+| DELETE | `/api/certificates/{id}` | `Admin` | Удалить сертификат |
+
+### Пример запроса: Создать сертификат
+```json
+POST /api/certificates
+Authorization: Bearer {token}
+{
+  "name": "Сертификат ISO 9001",
+  "imagePath": "/uploads/certificates/iso9001.jpg"
+}
