@@ -138,3 +138,46 @@ GET /api/company
   ]
 }
 ```
+
+# Новости
+## NewsController
+
+| Метод | Эндпоинт | Доступ | Описание |
+|-------|----------|--------|----------|
+| GET | `/api/news` | Все | Получить все новости |
+| GET | `/api/news/{id}` | Все | Получить новость по ID |
+| POST | `/api/news` | `Admin`, `Creator` | Создать новость |
+| PUT | `/api/news/{id}` | `Admin`, `Creator` | Обновить новость |
+| DELETE | `/api/news/{id}` | `Admin`, `Creator` | Удалить новость |
+
+### Пример запроса: Создать новость
+```json
+POST /api/news
+Authorization: Bearer {token}
+{
+  "name": "Новое поступление запчастей",
+  "description": "Поступили оригинальные детали Toyota и BMW",
+  "publishedAt": "2026-06-11T12:00:00Z",
+  "imagePath": "/uploads/news/stock.jpg"
+}
+```
+
+# Акции 
+## PromotionController
+### /api/promotions GET, доступ имеют все, Получить все акции
+### /api/promotions/{id} GET, доступ имеют все, Получить акцию по ID
+### /api/promotions POST, доступ имеют Admin и Creator, Создать акцию
+### /api/promotions/{id} PUT, доступ имеют Admin и Creator, Обновить акцию
+### /api/promotions/{id} DELETE, доступ имеют Admin и Creator, Удалить акцию
+
+### Пример запроса: Создать акцию
+```json
+POST /api/promotions
+Authorization: Bearer {token}
+{
+  "name": "Скидка 15% на тормозные колодки",
+  "description": "До конца месяца",
+  "imagePath": "/uploads/promotions/brakes-sale.jpg"
+}
+```
+
