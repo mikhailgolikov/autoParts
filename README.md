@@ -201,3 +201,42 @@ Authorization: Bearer {token}
   "name": "Сертификат ISO 9001",
   "imagePath": "/uploads/certificates/iso9001.jpg"
 }
+```
+
+# Обращения
+
+## AppealsController
+
+### Создание обращений
+
+| Метод | Эндпоинт | Доступ | Описание |
+|-------|----------|--------|----------|
+| POST | `/api/appeals/client-questions` | Авторизованный | Создать вопрос клиента |
+| POST | `/api/appeals/supplier-requests` | Авторизованный | Создать заявку поставщика |
+
+#### Пример: Вопрос клиента
+```json
+POST /api/appeals/client-questions
+Authorization: Bearer {token}
+{
+  "category": "Order",
+  "managerComment": "Нужны тормозные колодки",
+  "contactPhone": "+79001234567",
+  "contactEmail": "ivan@mail.ru"
+}
+```
+#### Пример: Заявка поставщика
+```json POST /api/appeals/supplier-requests
+Authorization: Bearer {token}
+{
+  "companyName": "ООО Поставщик",
+  "managerComment": "Хотим стать партнёрами"
+}
+```
+### /api/appeals/my GET, доступ авт пользователь Авторизованный, просмотр клиентом своих обращений
+### /api/appeals GET, доступ admin, creator, просмотр всех обращений пользователей 
+### /api/appeals/{id} GET, доступ - admin, creator, владелец, образение к конкретному образению 
+### /api/appeals/user/{userId} GET, доустп admin, creator, обращения пользователя
+
+### /api/appeals/{id}/status PATCH, Admin, Creator, сменить статус
+### /api/appeals/{id}/contacts PATCH, Admin, Creator, владелец
