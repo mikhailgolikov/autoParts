@@ -191,7 +191,7 @@ Authorization: Bearer {token}
 | GET | `/api/certificates/{id}` | Все | Получить сертификат по ID |
 | POST | `/api/certificates` | `Admin`, `Creator` | Создать сертификат |
 | PUT | `/api/certificates/{id}` | `Admin`, `Creator` | Обновить сертификат |
-| DELETE | `/api/certificates/{id}` | `Admin` | Удалить сертификат |
+| DELETE | `/api/certificates/{id}` | `Admin`, `Creator` | Удалить сертификат |
 
 ### Пример запроса: Создать сертификат
 ```json
