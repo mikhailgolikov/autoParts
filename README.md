@@ -240,3 +240,44 @@ Authorization: Bearer {token}
 
 ### /api/appeals/{id}/status PATCH, Admin, Creator, сменить статус
 ### /api/appeals/{id}/contacts PATCH, Admin, Creator, владелец
+
+
+
+# Бренды
+## BrandsController
+
+### /api/brands  GET, получить список всех брендов, могут все
+### /api/brands/{id} GET, Получить бренд по ID, доступ имеют все
+### /api/brands POST, Создать бренд. Доступ: Admin, Creator.
+### /api/brands/{id} PUT, Обновить бренд. Доступ: Admin, Creator.
+### /api/brands/{id} DELETE, Удалить бренд, Доступ: Admin, Creator.
+
+# Категории
+## CategoriesController
+### /api/categories GET, Получить список всех категорий, общий доступ
+### /api/categories/{id} GET, Получить категорию по ID вместе со всеми атрибутами этой категории, общий доступ
+### /api/categories POST, Создать категорию. Доступ: Admin, Creator.
+### /api/categories/{id} PUT, Обновить категорию. Доступ: Admin, Creator.
+### /api/categories/{id} DELETE, Удалить категорию,  Доступ: Admin, Creator.  Важно: Нельзя удалить категорию, если к ней привязаны товары.
+
+# Атрибуты 
+## AttributesController
+### /api/attributes GET, Получить список всех атрибутов, общий доступ
+### /api/attributes/{id}, GET, получить атрибут по id, общий доступ
+### /api/attributes/category/{categoryId} GET, получить все атрибуты конкретной категории, общий доступ
+### /api/attributes POST, Создать атрибут. Доступ: Admin, Creator.
+### /api/attributes/{id}, PUT, Обновить атрибут. Доступ: Admin, Creator.
+### /api/attributes/{id}, DELETE, Удалить атрибут. Доступ: Только Admin, Creator. Важно: При удалении атрибута все его значения у товаров удаляются автоматически.
+
+# Товары
+## ProductsController
+### /api/products GET, Получить список товаров с фильтрацией, пагинацией и сортировкой, общий доступ
+### /api/products/{id}, GET Получить полную информацию о товаре, включая все значения атрибутов, абщий доступ
+### /api/products/search?q={text} GET, полный доступ, Поиск товаров по названию и артикулу.
+### /api/products/brand/{brandId} GET, получить все бренды товара, полный доступ
+### /api/products/category/{categoryId} GET, получить все товары по категории, обзий доступ
+### /api/products POST, Создать товар. Доступ: Admin, Creator.
+### PUT /api/products/{id}, Полностью обновить товар. Доступ: Admin, Creator.
+### PATCH /api/products/{id}/stock, Обновить количество на складе. Доступ: Admin, Creator.
+### PATCH /api/products/{id}/price, Обновить цену. Доступ: Admin, Creator.
+### DELETE /api/products/{id}, Удалить товар. Доступ: Только Admin и Creator
