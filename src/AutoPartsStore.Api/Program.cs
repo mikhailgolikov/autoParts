@@ -32,7 +32,19 @@ builder.Services.AddScoped<NewsService>();
 builder.Services.AddScoped<PromotionService>();
 builder.Services.AddScoped<CertificateService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowFrontend");
 
 using (var scope = app.Services.CreateScope())
 {

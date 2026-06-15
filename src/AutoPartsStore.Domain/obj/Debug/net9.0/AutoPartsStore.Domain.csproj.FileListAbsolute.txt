@@ -1,0 +1,12 @@
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\bin\Debug\net9.0\AutoPartsStore.Domain.deps.json
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\bin\Debug\net9.0\AutoPartsStore.Domain.dll
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\bin\Debug\net9.0\AutoPartsStore.Domain.pdb
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.AssemblyInfoInputs.cache
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.AssemblyInfo.cs
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.sourcelink.json
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.dll
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\refint\AutoPartsStore.Domain.dll
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\AutoPartsStore.Domain.pdb
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Domain\obj\Debug\net9.0\ref\AutoPartsStore.Domain.dll
