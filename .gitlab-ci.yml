@@ -12,8 +12,6 @@ sast_scan:
     paths:
       - security/reports/sast/
       - semgrep.sarif
-    reports:
-      sarif: semgrep.sarif
   allow_failure: true
 
 sca_scan:
