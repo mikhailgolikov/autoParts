@@ -1,0 +1,40 @@
+stages:
+  - security-scan
+
+.security_template:
+  stage: security-scan
+  image: ://microsoft.com  
+  before_script:
+    - chmod +x ./security/scripts/*.ps1
+
+
+sast_scan:
+  extends: .security_template
+  script:
+    - pwsh -File ./security/scripts/run-sast.ps1
+  artifacts:
+    name: "sast-report"
+    when: always
+    paths:
+      - security/reports/sast/
+
+
+sca_scan:
+  extends: .security_template
+  script:
+    - pwsh -File ./security/scripts/run-sca.ps1
+  artifacts:
+    name: "sca-report"
+    when: always
+    paths:
+      - security/reports/sca/
+
+dast_scan:
+  extends: .security_template
+  script:
+    - pwsh -File ./security/scripts/run-dast.ps1
+  artifacts:
+    name: "dast-report"
+    when: always
+    paths:
+      - security/reports/dast/
