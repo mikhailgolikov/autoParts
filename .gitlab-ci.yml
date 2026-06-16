@@ -3,7 +3,7 @@ stages:
 
 sast_scan:
   stage: security-scan
-  image: ://microsoft.com
+  image: returntocorp/semgrep:latest
   before_script:
     - chmod +x ./security/scripts/run-sast.ps1 || true
   script:
@@ -16,7 +16,7 @@ sast_scan:
 
 sca_scan:
   stage: security-scan
-  image: ://microsoft.com
+  image: mcr.microsoft.com/dotnet/sdk:9.0
   before_script:
     - chmod +x ./security/scripts/run-sca.ps1 || true
   script:
@@ -29,7 +29,7 @@ sca_scan:
 
 dast_scan:
   stage: security-scan
-  image: ://microsoft.com
+  image: zaproxy/zap-stable
   before_script:
     - chmod +x ./security/scripts/run-dast.ps1 || true
   script:
