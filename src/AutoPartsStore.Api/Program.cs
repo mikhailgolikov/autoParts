@@ -1,4 +1,5 @@
 using AutoPartsStore.Api.Auth;
+using AutoPartsStore.Api.Security;
 using AutoPartsStore.Api.Services;
 using AutoPartsStore.Api.Swagger;
 using AutoPartsStore.Api.Validation;
@@ -33,6 +34,8 @@ builder.Services.AddScoped<PromotionService>();
 builder.Services.AddScoped<CertificateService>();
 
 var app = builder.Build();
+
+app.UseSecurityHeaders();
 
 using (var scope = app.Services.CreateScope())
 {

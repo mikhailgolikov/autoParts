@@ -10,7 +10,7 @@ public class CreateUserRequestValidator : AbstractValidator<CreateUserRequest>
     {
         RuleFor(x => x.Name).NotEmpty().MaximumLength(200);
         RuleFor(x => x.Email).NotEmpty().EmailAddress().MaximumLength(256);
-        RuleFor(x => x.Password).NotEmpty().MinimumLength(6).MaximumLength(100);
+        RuleFor(x => x.Password).NotEmpty().MinimumLength(8).MaximumLength(100);
         RuleFor(x => x.PhoneNumber).MaximumLength(32);
         RuleFor(x => x.Role).IsInEnum();
     }
@@ -40,7 +40,7 @@ public class ChangePasswordRequestValidator : AbstractValidator<ChangePasswordRe
     public ChangePasswordRequestValidator()
     {
         RuleFor(x => x.CurrentPassword).NotEmpty();
-        RuleFor(x => x.NewPassword).NotEmpty().MinimumLength(6).MaximumLength(100);
+        RuleFor(x => x.NewPassword).NotEmpty().MinimumLength(8).MaximumLength(100);
     }
 }
 
