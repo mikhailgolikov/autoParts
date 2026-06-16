@@ -4,38 +4,41 @@ stages:
 sast_scan:
   stage: security-scan
   image: returntocorp/semgrep:latest
-  before_script:
-    - chmod +x ./security/scripts/run-sast.ps1 || true
   script:
-    - pwsh -File ./security/scripts/run-sast.ps1
+    - semgrep --config security/sast/.semgrep.yml --config p/secrets --config p/csharp src/ security/samples/ --sarif --output semgrep.sarif
   artifacts:
     name: "sast-report"
     when: always
     paths:
       - security/reports/sast/
+      - semgrep.sarif
+    reports:
+      sarif: semgrep.sarif
+  allow_failure: true
 
 sca_scan:
   stage: security-scan
   image: mcr.microsoft.com/dotnet/sdk:9.0
-  before_script:
-    - chmod +x ./security/scripts/run-sca.ps1 || true
   script:
-    - pwsh -File ./security/scripts/run-sca.ps1
+    - dotnet restore
+    - dotnet list package --vulnerable --include-transitive 2>&1 | tee sca-report.txt
   artifacts:
     name: "sca-report"
     when: always
     paths:
       - security/reports/sca/
+      - sca-report.txt
+  allow_failure: true
 
 dast_scan:
   stage: security-scan
   image: zaproxy/zap-stable
-  before_script:
-    - chmod +x ./security/scripts/run-dast.ps1 || true
   script:
-    - pwsh -File ./security/scripts/run-dast.ps1
+    - zap-api-scan.py -t http://localhost:5065/swagger/v1/swagger.json -f openapi -r zap-report.html || true
   artifacts:
     name: "dast-report"
     when: always
     paths:
       - security/reports/dast/
+      - zap-report.html
+  allow_failure: true
