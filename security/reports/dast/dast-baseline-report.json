@@ -1,0 +1,68 @@
+﻿{
+    "summary":  {
+                    "low":  4,
+                    "medium":  3,
+                    "total":  7
+                },
+    "findings":  [
+                     {
+                         "pluginId":  "10021",
+                         "alert":  "X-Content-Type-Options Header Missing",
+                         "risk":  "Medium",
+                         "url":  "http://localhost:5065/swagger/index.html",
+                         "detail":  "Response does not include X-Content-Type-Options: nosniff",
+                         "solution":  "Add header X-Content-Type-Options nosniff in SecurityHeadersExtensions.cs"
+                     },
+                     {
+                         "pluginId":  "10020",
+                         "alert":  "X-Frame-Options Header Missing",
+                         "risk":  "Medium",
+                         "url":  "http://localhost:5065/swagger/index.html",
+                         "detail":  "Clickjacking protection header is absent",
+                         "solution":  "Add X-Frame-Options DENY or CSP frame-ancestors none"
+                     },
+                     {
+                         "pluginId":  "10038",
+                         "alert":  "Content Security Policy Header Missing",
+                         "risk":  "Medium",
+                         "url":  "http://localhost:5065/swagger/index.html",
+                         "detail":  "No CSP header, XSS impact is higher if injection exists",
+                         "solution":  "Add restrictive Content-Security-Policy for API responses"
+                     },
+                     {
+                         "pluginId":  "10035",
+                         "alert":  "Referrer Policy Header Missing",
+                         "risk":  "Low",
+                         "url":  "http://localhost:5065/swagger/index.html",
+                         "detail":  "Referrer-Policy not set",
+                         "solution":  "Add Referrer-Policy strict-origin-when-cross-origin"
+                     },
+                     {
+                         "pluginId":  "10036",
+                         "alert":  "Server Leaks Version Information",
+                         "risk":  "Low",
+                         "url":  "http://localhost:5065/swagger/index.html",
+                         "detail":  "Server header exposes technology stack",
+                         "solution":  "Remove or genericize Server header in production"
+                     },
+                     {
+                         "pluginId":  "10036",
+                         "alert":  "Server Leaks Version Information",
+                         "risk":  "Low",
+                         "url":  "http://localhost:5065/api/company",
+                         "detail":  "Server header exposes technology stack",
+                         "solution":  "Remove or genericize Server header in production"
+                     },
+                     {
+                         "pluginId":  "10036",
+                         "alert":  "Server Leaks Version Information",
+                         "risk":  "Low",
+                         "url":  "http://localhost:5065/api/products",
+                         "detail":  "Server header exposes technology stack",
+                         "solution":  "Remove or genericize Server header in production"
+                     }
+                 ],
+    "scannedAt":  "2026-06-15T12:59:56.1773000Z",
+    "target":  "http://localhost:5065",
+    "tool":  "OWASP-aligned baseline (ZAP rule IDs referenced)"
+}

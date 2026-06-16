@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Demo project for SCA: intentionally references a package with known CVEs -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- CVE-2024-27929, CVE-2024-41131 — used only to verify dependency scanners -->
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+  </ItemGroup>
+</Project>
