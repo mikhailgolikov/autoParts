@@ -941,6 +941,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AutoPartsStore.Api.Controllers.ForSuppliersPageController",
+    "Method": "Get",
+    "RelativePath": "api/for-suppliers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "AutoPartsStore.Api.Contracts.ForSuppliersPage.ForSuppliersPageResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AutoPartsStore.Api.Controllers.ForSuppliersPageController",
+    "Method": "Update",
+    "RelativePath": "api/for-suppliers",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoPartsStore.Api.Contracts.ForSuppliersPage.UpdateForSuppliersPageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AutoPartsStore.Api.Contracts.ForSuppliersPage.ForSuppliersPageResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "AutoPartsStore.Api.Controllers.NewsController",
     "Method": "GetAll",
     "RelativePath": "api/news",

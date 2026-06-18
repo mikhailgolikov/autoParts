@@ -31,6 +31,7 @@ builder.Services.AddScoped<ContactService>();
 builder.Services.AddScoped<NewsService>();
 builder.Services.AddScoped<PromotionService>();
 builder.Services.AddScoped<CertificateService>();
+builder.Services.AddScoped<ForSuppliersPageService>();
 
 builder.Services.AddCors(options =>
 {
@@ -52,6 +53,7 @@ using (var scope = app.Services.CreateScope())
     await dbContext.Database.MigrateAsync();
     await CompanySeeder.SeedAsync(dbContext);
     await AdminSeeder.SeedAsync(dbContext, app.Configuration);
+    await ForSuppliersPageSeeder.SeedAsync(dbContext);
 }
 
 if (app.Environment.IsDevelopment())

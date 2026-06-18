@@ -148,5 +148,5 @@ C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\
 C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\obj\Debug\net9.0\AutoPartsStore.Api.pdb
 C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\obj\Debug\net9.0\AutoPartsStore.Api.genruntimeconfig.cache
 C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\obj\Debug\net9.0\ref\AutoPartsStore.Api.dll
-C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\bin\Debug\net9.0\AutoPartsStore.Api.staticwebassets.runtime.json
+C:\Users\Александр\Desktop\проект\backend\src\AutoPartsStore.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
