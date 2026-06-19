@@ -249,7 +249,7 @@ public class ProductService(AppDbContext dbContext)
 
         if (!string.IsNullOrWhiteSpace(name))
         {
-            query = query.Where(p => p.Name.ToLower().Contains(name.ToLower()));
+            query = query.Where(p => p.Name.ToLower().Contains(name.ToLower()) || p.Article.ToLower().Contains(name.ToLower()));
         }
         if (inStock.HasValue)
         {

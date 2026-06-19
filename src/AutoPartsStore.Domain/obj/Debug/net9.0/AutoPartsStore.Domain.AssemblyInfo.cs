@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoPartsStore.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9f08fd545b6cc443b392f29106497e81b202ea3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bf10aca1284facc86357073879c81e1c2768aa2")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoPartsStore.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoPartsStore.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
