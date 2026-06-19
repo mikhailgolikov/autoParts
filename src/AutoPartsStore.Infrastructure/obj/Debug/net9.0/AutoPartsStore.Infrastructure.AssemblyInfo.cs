@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoPartsStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4b341ad138c23a2ce35c8a6a58f836d27483b63")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9f08fd545b6cc443b392f29106497e81b202ea3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoPartsStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoPartsStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

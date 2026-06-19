@@ -78,6 +78,8 @@ public record AttributeFilterQuery(
 public record ProductQuery(
     Guid? BrandId = null,
     Guid? CategoryId = null,
+    string? Name = null,
+    bool? InStock = null,
     int Page = 1,
     int PageSize = 20,
     string SortBy = "createdAt",
