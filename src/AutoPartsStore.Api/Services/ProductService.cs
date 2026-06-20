@@ -12,7 +12,7 @@ public class ProductService(AppDbContext dbContext)
         ProductQuery query,
         CancellationToken ct = default)
     {
-        var productsQuery = BuildBaseQuery(query.BrandId, query.CategoryId);
+        var productsQuery = BuildBaseQuery(query.BrandId, query.CategoryId, query.Name, query.InStock);
         productsQuery = ApplySorting(productsQuery, query.SortBy, query.SortOrder);
 
         var products = await productsQuery
@@ -47,7 +47,7 @@ public class ProductService(AppDbContext dbContext)
         CancellationToken ct = default)
     {
         var term = searchTerm.Trim().ToLowerInvariant();
-        var productsQuery = BuildBaseQuery(query.BrandId, query.CategoryId)
+        var productsQuery = BuildBaseQuery(query.BrandId, query.CategoryId, query.Name, query.InStock)
             .Where(p => p.Name.ToLower().Contains(term) || p.Article.ToLower().Contains(term));
 
         productsQuery = ApplySorting(productsQuery, query.SortBy, query.SortOrder);
@@ -233,7 +233,7 @@ public class ProductService(AppDbContext dbContext)
         return true;
     }
 
-    private IQueryable<Product> BuildBaseQuery(Guid? brandId, Guid? categoryId)
+    private IQueryable<Product> BuildBaseQuery(Guid? brandId, Guid? categoryId, string? name = null, bool? inStock = null)
     {
         var query = dbContext.Products.AsQueryable();
 
@@ -245,6 +245,15 @@ public class ProductService(AppDbContext dbContext)
         if (categoryId.HasValue)
         {
             query = query.Where(p => p.CategoryId == categoryId.Value);
+        }
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            query = query.Where(p => p.Name.ToLower().Contains(name.ToLower()) || p.Article.ToLower().Contains(name.ToLower()));
+        }
+        if (inStock.HasValue)
+        {
+            query = query.Where(p => p.InStock == inStock.Value);
         }
 
         return query;

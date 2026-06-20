@@ -23,6 +23,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<ProductAttribute> ProductAttributes => Set<ProductAttribute>();
     public DbSet<Product> Products => Set<Product>();
     public DbSet<ProductAttributeValue> ProductAttributeValues => Set<ProductAttributeValue>();
+    public DbSet<ForSuppliersPage> ForSuppliersPages => Set<ForSuppliersPage>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -185,6 +186,14 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
                 .WithMany(a => a.ProductValues)
                 .HasForeignKey(v => v.AttributeId)
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<ForSuppliersPage>(entity =>
+        {
+            entity.ToTable("for_suppliers_page");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Title).HasMaxLength(300).IsRequired();
+            entity.Property(e => e.Content).IsRequired();
         });
     }
 }
