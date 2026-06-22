@@ -1,5 +1,4 @@
 using AutoPartsStore.Api.Auth;
-using AutoPartsStore.Api.Security;
 using AutoPartsStore.Api.Services;
 using AutoPartsStore.Api.Swagger;
 using AutoPartsStore.Api.Validation;
@@ -46,7 +45,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseSecurityHeaders();
 app.UseCors("AllowFrontend");
 using (var scope = app.Services.CreateScope())
 {
